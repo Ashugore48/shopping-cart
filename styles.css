@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background-color: black;
+  border-bottom: 1px solid white;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+nav .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav .nav-items a {
+  margin: 0 1rem;
+}
+
+.title-content {
+  position: relative;
+  top: 20px;
+  left: 60px;
+  font-family: "Inter", sans-serif;
+}
+.login-signup {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.losi-btn {
+  padding-inline: 35px;
+  padding-block: 8px;
+  cursor: pointer;
+}
+#login-btn {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+}
+#signup-btn {
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  outline: none;
+}
+
+.landingPagePic {
+  position: absolute;
+  right: 0px;
+  top: 150px;
+  z-index: -1;
+}

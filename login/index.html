@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-page</title>
+    <link rel="stylesheet" href="login-styling.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="/">MeShop.</a>
+      </div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        <a href="/cart">My Cart</a>
+      </div>
+    </nav>
+    <div class="main-container">
+      <div class="login-title">
+        <p>Login</p>
+      </div>
+      <form id="loginForm" class="form-container">
+        <input
+          type="text"
+          placeholder="Email"
+          class="login-email-input input-box"
+          id="login-email-input"
+          required
+        />
+        <input
+          type="password"
+          class="login-password-input input-box"
+          id="login-password-input"
+          placeholder="Password"
+          required
+        />
+        <button class="login-button" id="login-button" type="submit">Login</button>
+        <script src="login-script.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

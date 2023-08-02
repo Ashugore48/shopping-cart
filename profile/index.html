@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile-page</title>
+    <link rel="stylesheet" href="profile-styling.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="/">MeShop.</a>
+      </div>
+    </nav>
+    <div class="main-container">
+      <div class="myProfile-title">
+        <p>My Profile</p>
+      </div>
+      <div class="form-container">
+        <input
+          type="text"
+          placeholder="First Name"
+          class="firstname-input input-box"
+          id="firstname-input"
+          required
+        />
+        <input
+          type="text"
+          class="lastname-input input-box"
+          id="lastname-input"
+          placeholder="Last Name"
+          required
+        />
+        <button class="save-info-button profile-btn" id="save-info-button">
+          Save Info
+        </button>
+        <div class="myProfile-title">
+          <p>Edit Password</p>
+        </div>
+        <input
+          type="password"
+          placeholder="Old Password"
+          class="old-password-input input-box"
+          id="old-password-input"
+          required
+        /><input
+          type="password"
+          placeholder="New Password"
+          class="new-password-input input-box"
+          id="new-password-input"
+          required
+        /><input
+          type="password"
+          placeholder="Confirm New Password"
+          class="confirm-new-password-input input-box"
+          id="confirm-new-password-input"
+          required
+        />
+        <button
+          class="change-password-button profile-btn"
+          id="change-password-button"
+        >
+          Change Password
+        </button>
+        <button class="logout-button profile-btn" id="logout-button">
+          Logout
+        </button>
+      </div>
+    </div>
+    <script src="profile-script.js"></script>
+  </body>
+</html>

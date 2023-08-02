@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup-Page</title>
+    <link rel="stylesheet" href="signup-styling.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="/">MeShop.</a>
+      </div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        <a href="/cart">My Cart</a>
+      </div>
+    </nav>
+    <div class="main-container">
+      <div class="signup-title">
+        <p>Signup</p>
+      </div>
+      <form id="signupForm" class="form-container">
+        <input
+          type="text"
+          placeholder="First Name"
+          class="firstname-input input-box"
+          id="firstname-input"
+          required
+        />
+        <input
+          type="text"
+          class="lastname-input input-box"
+          id="lastname-input"
+          placeholder="Last Name"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          class="email-input input-box"
+          id="email-input"
+          required
+        /><input
+          type="password"
+          placeholder="Password"
+          class="password-input input-box"
+          id="password-input"
+          required
+        /><input
+          type="password"
+          placeholder="Confirm Password"
+          class="confirm-password-input input-box"
+          id="confirm-password-input"
+          required
+        />
+        <button class="signup-button" id="signup-button" type="submit">Signup</button>
+      </form>
+    </div>
+    <script src="signup-script.js"></script>
+  </body>
+</html>
