@@ -5,5 +5,5 @@ document.getElementById("login-btn").addEventListener("click", () => {
   window.location.href = "/shopping-cart/login/index.html";
 });
 document.getElementById("signup-btn").addEventListener("click", () => {
-  window.location.href = "/shopping-cart/signup/signup.html";
+  window.location.href = "/shopping-cart/signup/index.html";
 });

@@ -1,5 +1,6 @@
-
-
+document.getElementById('myCart-btn').addEventListener('click', (e)=>{
+  alert('To check your cart you have to Login first');
+})
 
 document
   .getElementById("signupForm")

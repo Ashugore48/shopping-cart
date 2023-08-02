@@ -1,3 +1,7 @@
+document.getElementById('myCart-btn').addEventListener('click', (e)=>{
+  alert('To check your cart you have to Login first');
+})
+
 document
   .getElementById("loginForm")
   .addEventListener("submit", function (event) {
@@ -20,6 +24,6 @@ document
       alert("Incorrect Login Credential");
     } else {
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
-      window.location.href = "/shop/index.html";
+      window.location.href = "/shopping-cart/shop/index.html";
     }
   });
