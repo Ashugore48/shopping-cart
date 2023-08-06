@@ -1,23 +1,24 @@
 const currentUserString = JSON.parse(localStorage.getItem("currentUser"));
-fetch("https://fakestoreapi.com/products")
-  .then((res) => res.json())
-  .then((productsData) => renderProducts(productsData));
+
+if (currentUserString !== null) {
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((productsData) => renderProducts(productsData));
   function getRandomSizes() {
     const sizes = ["S", "M", "L", "XL", "XXL"];
     const randomSizes = [];
-    const numSizes = Math.floor(Math.random() * 3) + 1; 
+    const numSizes = Math.floor(Math.random() * 3) + 1;
     for (let i = 0; i < numSizes; i++) {
       const randomIndex = Math.floor(Math.random() * sizes.length);
       randomSizes.push(sizes[randomIndex]);
     }
     return randomSizes;
   }
-  
-  
+
   function getRandomColors() {
     const colors = ["red", "blue", "green", "black", "white"];
     const randomColors = [];
-    const numColors = Math.floor(Math.random() * 4) + 1; 
+    const numColors = Math.floor(Math.random() * 4) + 1;
     for (let i = 0; i < numColors; i++) {
       const randomIndex = Math.floor(Math.random() * colors.length);
       randomColors.push(colors[randomIndex]);
@@ -26,8 +27,8 @@ fetch("https://fakestoreapi.com/products")
   }
 
   function getRandomRating() {
-    const rating = Math.random() * 4.0 + 1.0; 
-    
+    const rating = Math.random() * 4.0 + 1.0;
+
     return rating.toFixed(1);
   }
 
@@ -37,7 +38,7 @@ fetch("https://fakestoreapi.com/products")
 
     const colors = product.colors ? product.colors : getRandomColors();
     const rating = getRandomRating();
-  
+
     return `
       <div class="item">
         <img src="${product.image}" alt="${product.title}"/>
@@ -50,7 +51,12 @@ fetch("https://fakestoreapi.com/products")
           <div class="colors">
             Colors:
             <div class="row">
-              ${colors.map(color => `<div class="circle" style="background-color: ${color}"></div>`).join("")}
+              ${colors
+                .map(
+                  (color) =>
+                    `<div class="circle" style="background-color: ${color}"></div>`
+                )
+                .join("")}
             </div>
           </div>
           <div class="row1">Rating: ${rating}</div>
@@ -65,7 +71,7 @@ fetch("https://fakestoreapi.com/products")
     const productContainer = document.getElementById("product-container");
     let html = "";
     if (Array.isArray(data)) {
-      data.forEach(product => {
+      data.forEach((product) => {
         html += createProductItem(product);
       });
     } else {
@@ -75,14 +81,14 @@ fetch("https://fakestoreapi.com/products")
   }
 
   fetch("https://fakestoreapi.com/products/category/men's clothing")
-  .then(res=>res.json())
-  .then((mensProductsData) => renderMensProducts(mensProductsData));
+    .then((res) => res.json())
+    .then((mensProductsData) => renderMensProducts(mensProductsData));
 
   function renderMensProducts(data) {
     const productContainer = document.getElementById("mens-product-container");
     let html = "";
     if (Array.isArray(data)) {
-      data.forEach(product => {
+      data.forEach((product) => {
         html += createProductItem(product);
       });
     } else {
@@ -92,14 +98,16 @@ fetch("https://fakestoreapi.com/products")
   }
 
   fetch("https://fakestoreapi.com/products/category/women's clothing")
-  .then(res=>res.json())
-  .then((womensProductsData) => renderwoMensProducts(womensProductsData));
+    .then((res) => res.json())
+    .then((womensProductsData) => renderwoMensProducts(womensProductsData));
 
   function renderwoMensProducts(data) {
-    const productContainer = document.getElementById("womens-product-container");
+    const productContainer = document.getElementById(
+      "womens-product-container"
+    );
     let html = "";
     if (Array.isArray(data)) {
-      data.forEach(product => {
+      data.forEach((product) => {
         html += createProductItem(product);
       });
     } else {
@@ -107,3 +115,7 @@ fetch("https://fakestoreapi.com/products")
     }
     productContainer.innerHTML = html;
   }
+} else {
+  window.location.href = "/shopping-cart/";
+  alert("user not found");
+}
