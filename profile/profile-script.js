@@ -1,6 +1,5 @@
 const currentUserString = JSON.parse(localStorage.getItem("currentUser"));
 
-
 if (currentUserString !== null) {
   let formData = JSON.parse(localStorage.getItem("formData")) || [];
   document.getElementById("save-info-button").addEventListener("click", (e) => {
@@ -14,9 +13,27 @@ if (currentUserString !== null) {
       password: currentUserString.password,
     };
     localStorage.setItem("currentUser", JSON.stringify(newCurrentUser));
+
+    
+
+    const key = "formData";
+    const arrayJSON = localStorage.getItem(key);
+
+    const myArray = JSON.parse(arrayJSON);
+    const objectToDelete = currentUserString.email;
+    const indexToDelete = myArray.findIndex(
+      (item) => item.email === objectToDelete
+    );
+
+    if (indexToDelete !== -1) {
+      myArray.splice(indexToDelete, 1);
+      const updatedArrayJSON = JSON.stringify(myArray);
+      localStorage.setItem(key, updatedArrayJSON);
+    }
+
     formData.push(newCurrentUser);
-    console.log(formData);
     localStorage.setItem("formData", JSON.stringify(formData));
+
     alert("Information saved successfully!!");
     document.getElementById("firstname-input").value = "";
     document.getElementById("lastname-input").value = "";
@@ -52,17 +69,12 @@ if (currentUserString !== null) {
         alert("old password is not matching");
       }
     });
-  
+
   document.getElementById("logout-button").addEventListener("click", (e) => {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem("currentUser");
     window.location.href = "/shopping-cart/";
   });
-  
-
 } else {
   window.location.href = "/shopping-cart/";
-  alert('user not found');
+  alert("user not found");
 }
-
-
-
