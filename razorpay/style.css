@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(159, 225, 225);
+    font-family: 'Poppins', sans-serif
+}
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+
+
+button{
+    margin-top: 10rem;
+    padding: 0.2rem 0.4rem;
+    height: 3rem;
+    width: 12rem;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid #d9e7ff;
+    font-size: 20px;
+    background-color: black;
+    color: aliceblue;
+}

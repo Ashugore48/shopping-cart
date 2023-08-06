@@ -1,14 +1,34 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Razorpay Button</title>
-  </head>
-  <body>
-    <button id="rzp-button1">Pay</button>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="script.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <script>
+      function onButtonClick() {
+        Instamojo.open('https://www.instamojo.com/@sampad');
+      }
+    </script>   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Poppins&family=Roboto:ital,wght@0,100;0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div id="navbar">
+            <div><p>Shopping Cart</p></div>
+            <div><p id="amount"></p></div>
+            <div><p id="userName">No User Login</p></div>
+        </div>
+    </nav>
+   
+   <center> <button onclick="onButtonClick()">
+    Pay Now
+  </button></center>
+    <script src="./script.js"></script>
+</body>
 </html>

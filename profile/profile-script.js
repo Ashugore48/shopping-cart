@@ -50,4 +50,7 @@ document
     }
   });
 
-document.getElementById("logout-button").addEventListener("click", (e) => {});
+document.getElementById("logout-button").addEventListener("click", (e) => {
+  localStorage.removeItem('currentUser');
+  window.location.href('/shopping-cart/');
+});
