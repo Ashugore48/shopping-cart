@@ -105,6 +105,19 @@ aside section label {
   margin-left: 0.25rem;
 }
 
+.apply-filter-btn{
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  padding: 0.5rem;
+  width: 7rem;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.filter-btn{
+  padding: 1rem;
+}
+
 main-content {
   padding: 1rem;
   position: relative;

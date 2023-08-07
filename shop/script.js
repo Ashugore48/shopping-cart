@@ -1,24 +1,31 @@
-
-const getRandomData = (array, maxCount) => {
-  const data = [];
-  const count = Math.floor(Math.random() * maxCount) + 1;
-  for (let i = 0; i < count; i++) {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    data.push(array[randomIndex]);
+// Function to shuffle an array
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
+};
+
+// Function to get random data from an array without repetition
+const getRandomData = (array, maxCount) => {
+  const shuffledArray = shuffleArray(array);
+  const data = shuffledArray.slice(0, Math.min(maxCount, shuffledArray.length));
   return data;
 };
 
 const getRandomRating = () => (Math.random() * 4.0 + 1.0).toFixed(1);
+
 const createProductItem = (product) => {
   const sizes = product.sizes ? product.sizes : getRandomData(["S", "M", "L", "XL", "XXL"], 3);
-  const colors = product.colors ? product.colors : getRandomData(["red", "blue", "green", "black", "white"], 4);
+  const numColors = Math.floor(Math.random() * 4) + 1; // Random number of colors between 1 and 4
+  const colors = product.colors ? product.colors : getRandomData(["red", "blue", "green", "black", "white"], numColors);
   const rating = getRandomRating();
 
   return `
     <div class="item">
       <img src="${product.image}" alt="${product.title}"/>
-      <hr style="width:206px">
+      <hr style="width: 206px">
       <div class="info">
         <div class="row">
           <div class="price">$${product.price}</div>
@@ -39,7 +46,6 @@ const createProductItem = (product) => {
   `;
 };
 
-// Function to fetch data from the API and render products
 const fetchDataAndRender = async (url, containerId) => {
   try {
     const response = await fetch(url);

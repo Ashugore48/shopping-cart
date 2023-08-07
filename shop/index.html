@@ -52,23 +52,24 @@
           <title>Sizes</title>
           <ul>
             <li>
-              <input id="s" type="checkbox" name="color" />
+              <input id="s" type="checkbox" name="size" />
               <label for="s">S</label>
             </li>
             <li>
-              <input id="m" type="checkbox" name="color" />
+              <input id="m" type="checkbox" name="size" />
               <label for="m">M</label>
             </li>
             <li>
-              <input id="l" type="checkbox" name="color" />
+              <input id="l" type="checkbox" name="size" />
               <label for="l">L</label>
             </li>
             <li>
-              <input id="xl" type="checkbox" name="color" />
+              <input id="xl" type="checkbox" name="size" />
               <label for="xl">XL</label>
             </li>
           </ul>
         </section>
+        
         <section>
           <title>Rating</title>
           <input
@@ -108,6 +109,11 @@
               <label for="100on">$100 onwards</label>
             </li>
           </ul>
+
+          <div class="filter-btn">
+            <button type="submit" id="apply-filter-btn" class="apply-filter-btn">Apply Filter</button>
+          </div>
+
         </section>
       </aside>
       <main-content>
@@ -121,16 +127,23 @@
         </div>
         <section>
           <title>All Products</title>
-          <div id="product-container" class="items"></div>
+          <div id="product-container" class="items">
+            <!-- Rendered product items will be placed here -->
+          </div>
         </section>
         <section>
           <title>Men's Clothing</title>
-          <div id="mens-product-container" class="items"></div>
+          <div id="mens-product-container" class="items">
+            <!-- Rendered men's clothing product items will be placed here -->
+          </div>
         </section>
         <section>
           <title>Women's Clothing</title>
-          <div id="womens-product-container" class="items"></div>
+          <div id="womens-product-container" class="items">
+            <!-- Rendered women's clothing product items will be placed here -->
+          </div>
         </section>
+        
       </main-content>
     </main>
     <script src="script.js"></script>
