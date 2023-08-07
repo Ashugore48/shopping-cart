@@ -119,3 +119,8 @@ if (currentUserString !== null) {
   window.location.href = "/shopping-cart/";
   alert("user not found");
 }
+
+// If User closes the window
+window.addEventListener("beforeunload", function (event) {
+  localStorage.removeItem("currentUser");
+});
