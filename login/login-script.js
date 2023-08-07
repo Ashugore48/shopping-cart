@@ -1,6 +1,6 @@
-document.getElementById("myCart-btn").addEventListener("click", (e) => {
-  alert("To check your cart you have to Login first");
-});
+document.getElementById('myCart-btn').addEventListener('click', (e)=>{
+  alert('To check your cart you have to Login first');
+})
 
 document
   .getElementById("loginForm")
@@ -13,21 +13,20 @@ document
     let userdata = JSON.parse(localStorage.getItem("formData")) || [];
     let currentUser;
     userdata.forEach((currEle) => {
-      if (currEle.email === loginEmail && currEle.password === loginPassword) {
+      if(currEle.email === loginEmail && currEle.password === loginPassword){
         exist = true;
         currentUser = currEle;
       }
+      
     });
 
     if (!exist) {
       alert("Incorrect Login Credential");
     } else {
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
       window.location.href = "/shopping-cart/shop/index.html";
     }
   });
 
-// If User closes the window
-window.addEventListener("beforeunload", function (event) {
-  localStorage.removeItem("currentUser");
-});
+
+  

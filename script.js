@@ -7,8 +7,3 @@ document.getElementById("login-btn").addEventListener("click", () => {
 document.getElementById("signup-btn").addEventListener("click", () => {
   window.location.href = "/shopping-cart/signup/index.html";
 });
-
-// If User closes the window
-window.addEventListener("beforeunload", function (event) {
-  localStorage.removeItem("currentUser");
-});

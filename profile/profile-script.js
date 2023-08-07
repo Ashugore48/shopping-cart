@@ -6,9 +6,7 @@ function updateFormData(newCurrentUser) {
 
   if (Array.isArray(myArray)) {
     const objectToDelete = newCurrentUser.email;
-    const indexToDelete = myArray.findIndex(
-      (item) => item.email === objectToDelete
-    );
+    const indexToDelete = myArray.findIndex((item) => item.email === objectToDelete);
 
     if (indexToDelete !== -1) {
       myArray.splice(indexToDelete, 1);
@@ -44,36 +42,32 @@ if (currentUserString !== null) {
     document.getElementById("lastname-input").value = "";
   });
 
-  document
-    .getElementById("change-password-button")
-    .addEventListener("click", (e) => {
-      e.preventDefault();
-      let oldPass = document.getElementById("old-password-input").value;
-      let newPass = document.getElementById("new-password-input").value;
-      let confirmPass = document.getElementById(
-        "confirm-new-password-input"
-      ).value;
+  document.getElementById("change-password-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    let oldPass = document.getElementById("old-password-input").value;
+    let newPass = document.getElementById("new-password-input").value;
+    let confirmPass = document.getElementById("confirm-new-password-input").value;
 
-      if (newPass !== confirmPass) {
-        alert("New Password and Current Passwords are not matching");
-      } else if (oldPass === currentUserString.password) {
-        let newCurrentUser = {
-          name: currentUserString.name,
-          lastName: currentUserString.lastName,
-          email: currentUserString.email,
-          password: confirmPass,
-        };
-        localStorage.setItem("currentUser", JSON.stringify(newCurrentUser));
-        updateFormData(newCurrentUser);
+    if (newPass !== confirmPass) {
+      alert("New Password and Current Passwords are not matching");
+    } else if (oldPass === currentUserString.password) {
+      let newCurrentUser = {
+        name: currentUserString.name,
+        lastName: currentUserString.lastName,
+        email: currentUserString.email,
+        password: confirmPass,
+      };
+      localStorage.setItem("currentUser", JSON.stringify(newCurrentUser));
+      updateFormData(newCurrentUser);
 
-        alert("Password changed successfully!!");
-        document.getElementById("old-password-input").value = "";
-        document.getElementById("new-password-input").value = "";
-        document.getElementById("confirm-new-password-input").value = "";
-      } else {
-        alert("Old password is not matching");
-      }
-    });
+      alert("Password changed successfully!!");
+      document.getElementById("old-password-input").value = "";
+      document.getElementById("new-password-input").value = "";
+      document.getElementById("confirm-new-password-input").value = "";
+    } else {
+      alert("Old password is not matching");
+    }
+  });
 
   document.getElementById("logout-button").addEventListener("click", (e) => {
     localStorage.removeItem("currentUser");
@@ -84,6 +78,6 @@ if (currentUserString !== null) {
   alert("User not found");
 }
 // If User closes the window
-window.addEventListener("beforeunload", function (event) {
+window.addEventListener("beforeunload", function(event) {
   localStorage.removeItem("currentUser");
 });
