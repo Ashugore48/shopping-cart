@@ -46,6 +46,7 @@ nav {
   border-bottom: 1px solid white;
   padding: 1rem;
   font-size: 1rem;
+  width: 101%;
 }
 
 nav .brand {
@@ -77,7 +78,7 @@ main aside {
 
 main main-content {
   display: block;
-  width: 100%;
+  width: 88.5%;
   margin-left: 11rem;
 }
 
@@ -177,7 +178,7 @@ main-content .items {
 
 main-content .items .item {
   border: 1px solid black;
-  width: 14%;
+  width: 16%;
 }
 
 main-content .items .item img {
